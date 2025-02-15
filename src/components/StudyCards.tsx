@@ -52,8 +52,8 @@ export function StudyCards() {
 
 	return (
 		<div className="text-center">
-			<h2 className="text-2xl font-bold mb-4">{deck.title}</h2>
-			<div className="mb-4 flex gap-4 justify-center items-center">
+			<h2 className="text-3xl font-bold mb-5 mt-3">{deck.title}</h2>
+			<div className="mb-6 flex gap-4 justify-center items-center">
 				<button
 					onClick={prevCard}
 					disabled={currentCardIndex === 0}
@@ -74,14 +74,14 @@ export function StudyCards() {
 			</div>
 			<div className="bg-white px-6 pt-6 pb-4 rounded shadow-md mb-4 w-[90%] max-w-3xl mx-auto">
 				<div className="text-xl mb-4 space-y-4">
-					<div className='text-blue-800 font-semibold flex flex-col gap-4'>
-						{currentCard.front.split('\n').map((line, i) => (<>{!line ? <br key={i} /> : <p key={i}>{line}</p>}</>))}
+					<div className='text-blue-800 font-semibold flex flex-col gap-1'>
+						{currentCard.front.split('\n').map((line, i) => (<div key={i}>{!line ? <br /> : <p>{line}</p>}</div>))}
 					</div>
 					{
 						showAnswer && (
 							<>
 								<div className='text-green-700 border-t border-gray-200 pt-4 flex flex-col gap-4'>
-									{currentCard.back.split('\n').map((line, i) => (<>{!line ? <br key={i} /> : <p key={i}>{line}</p>}</>))}
+									{currentCard.back.split('\n').map((line, i) => (<div key={i}>{!line ? <br /> : <p>{line}</p>}</div>))}
 								</div>
 								{
 									(currentCardIndex !== deck.cards.length - 1)
