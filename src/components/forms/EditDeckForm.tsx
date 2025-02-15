@@ -36,6 +36,7 @@ export function EditBlockForm() {
 	}
 
 	const removeCard = (index: number) => {
+		if(!confirm('Are you sure you want to remove this card?')) return
 		const updatedCards = cards.filter((_, i) => i !== index)
 		setCards(updatedCards)
 	}

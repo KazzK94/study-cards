@@ -23,6 +23,7 @@ export function CreateDeckForm() {
 	}
 
 	const removeCard = (index: number) => {
+		if(!confirm('Are you sure you want to delete this card?')) return
 		const updatedCards = cards.toSpliced(index, 1)
 		setCards(updatedCards)
 	}
