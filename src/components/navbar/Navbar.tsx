@@ -15,7 +15,7 @@ export function Navbar() {
 				<div className="flex items-center justify-between h-16">
 					<div className="flex items-center">
 						<Link to="/" className="text-xl font-bold">
-							Study Cards
+							Study Decks
 						</Link>
 					</div>
 					<div className="hidden md:block">
