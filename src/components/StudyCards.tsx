@@ -47,8 +47,7 @@ export function StudyCards() {
 	}
 
 	const restart = () => {
-		setCurrentCardIndex(0)
-		setShowAnswer(false)
+		window.location.reload()
 	}
 
 	return (
@@ -58,7 +57,7 @@ export function StudyCards() {
 				<button
 					onClick={prevCard}
 					disabled={currentCardIndex === 0}
-					className="bg-gray-300 text-gray-800/90 disabled:bg-gray-200/80 disabled:text-gray-300 px-4 py-2 rounded cursor-pointer"
+					className="bg-gray-300 text-gray-800/80 disabled:bg-gray-200/80 disabled:text-gray-300 px-4 py-2 rounded cursor-pointer"
 				>
 					<ArrowLeftIcon size={24} />
 				</button>
@@ -68,7 +67,7 @@ export function StudyCards() {
 				<button
 					onClick={nextCard}
 					disabled={currentCardIndex === deck.cards.length - 1}
-					className="bg-gray-300 text-gray-800/90 disabled:bg-gray-200/80 disabled:text-gray-300 px-4 py-2 rounded cursor-pointer"
+					className="bg-gray-300 text-gray-800/80 disabled:bg-gray-200/80 disabled:text-gray-300 px-4 py-2 rounded cursor-pointer"
 				>
 					<ArrowRightIcon size={24} />
 				</button>
