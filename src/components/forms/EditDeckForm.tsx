@@ -6,6 +6,7 @@ import type { Card, StudyDeck } from '../../types'
 import { getStudyDecks, updateDeck } from '../../data/storage'
 import { Input } from './Input'
 import { SaveIcon, XIcon } from 'lucide-react'
+import { TextArea } from './TextArea'
 
 export function EditBlockForm() {
 	const { blockId } = useParams<{ blockId: string }>()
@@ -82,14 +83,12 @@ export function EditBlockForm() {
 							</button>
 						</div>
 						<div className="space-y-3">
-							<Input
-								type="text"
+							<TextArea
 								placeholder="Question"
 								value={card.front}
 								onChange={(newValue) => updateCard(index, "front", newValue)}
 							/>
-							<Input
-								type="text"
+							<TextArea
 								placeholder="Answer"
 								value={card.back}
 								onChange={(newValue) => updateCard(index, "back", newValue)}

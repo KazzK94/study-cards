@@ -5,6 +5,7 @@ import type { Card as CardType } from "../../types"
 import { createDeck } from "../../data/storage"
 import { Input } from "./Input"
 import { PlusCircleIcon, SaveIcon, XIcon } from "lucide-react"
+import { TextArea } from './TextArea'
 
 export function CreateDeckForm() {
 	const [title, setTitle] = useState("")
@@ -67,14 +68,12 @@ export function CreateDeckForm() {
 							</button>
 						</div>
 						<div className="space-y-3">
-							<Input
-								type="text"
+							<TextArea
 								placeholder="Question"
 								value={card.front}
 								onChange={(newValue) => updateCard(index, "front", newValue)}
 							/>
-							<Input
-								type="text"
+							<TextArea
 								placeholder="Answer"
 								value={card.back}
 								onChange={(newValue) => updateCard(index, "back", newValue)}

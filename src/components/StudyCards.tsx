@@ -57,16 +57,29 @@ export function StudyCards() {
 				<div className="text-xl mb-4">
 					{
 						!showAnswer
-							? <p className='text-blue-800'>{currentCard.front}</p>
-							: <p className='text-green-700'>{currentCard.back}</p>
+							? (
+								<div className='text-blue-800'>
+									{currentCard.front.split('\n').map((line, i) => (<p key={i}>{line}</p>))}
+								</div>
+							) : (
+								<div className='text-green-700'>
+									{currentCard.back.split('\n').map((line, i) => (<p key={i}>{line}</p>))}
+								</div>
+							)
 					}
 				</div>
-				<button
-					onClick={() => setShowAnswer(!showAnswer)}
-					className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-				>
-					{showAnswer ? "Show Question" : "Show Answer"}
-				</button>
+
+				{
+					!showAnswer && (
+						<button
+							onClick={() => setShowAnswer(true)}
+							className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+						>
+							Show Answer
+						</button>
+					)
+				}
+
 			</div>
 			<div className="space-x-4">
 				<button
