@@ -48,24 +48,36 @@ export function StudyCards() {
 	return (
 		<div className="text-center">
 			<h2 className="text-2xl font-bold mb-4">{deck.title}</h2>
-			<div className="mb-4">
+			<div className="mb-4 flex gap-4 justify-center items-center">
+				<button
+					onClick={prevCard}
+					disabled={currentCardIndex === 0}
+					className="bg-gray-300 text-black px-4 py-2 rounded hover:opacity-90 disabled:opacity-50 cursor-pointer"
+				>
+					Previous
+				</button>
 				<p>
 					{currentCardIndex + 1} / {deck.cards.length}
 				</p>
+				<button
+					onClick={nextCard}
+					disabled={currentCardIndex === deck.cards.length - 1}
+					className="bg-gray-300 text-black px-4 py-2 rounded hover:opacity-90 disabled:opacity-50 cursor-pointer"
+				>
+					Next
+				</button>
 			</div>
 			<div className="bg-white p-6 rounded shadow-md mb-4 w-[90%] max-w-3xl mx-auto">
-				<div className="text-xl mb-4">
+				<div className="text-xl mb-4 space-y-3">
+					<div className='text-blue-800'>
+						{currentCard.front.split('\n').map((line, i) => (<p key={i}>{line}</p>))}
+					</div>
 					{
-						!showAnswer
-							? (
-								<div className='text-blue-800'>
-									{currentCard.front.split('\n').map((line, i) => (<p key={i}>{line}</p>))}
-								</div>
-							) : (
-								<div className='text-green-700'>
-									{currentCard.back.split('\n').map((line, i) => (<p key={i}>{line}</p>))}
-								</div>
-							)
+						showAnswer && (
+							<div className='text-green-700'>
+								{currentCard.back.split('\n').map((line, i) => (<p key={i}>{line}</p>))}
+							</div>
+						)
 					}
 				</div>
 
@@ -80,22 +92,6 @@ export function StudyCards() {
 					)
 				}
 
-			</div>
-			<div className="space-x-4">
-				<button
-					onClick={prevCard}
-					disabled={currentCardIndex === 0}
-					className="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 disabled:opacity-50"
-				>
-					Previous
-				</button>
-				<button
-					onClick={nextCard}
-					disabled={currentCardIndex === deck.cards.length - 1}
-					className="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 disabled:opacity-50"
-				>
-					Next
-				</button>
 			</div>
 		</div>
 	)

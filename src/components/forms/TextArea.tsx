@@ -18,14 +18,14 @@ export function TextArea({ label, value, placeholder, onChange, className }: Tex
 
 	return (
 		<>
-			{label && <label className='block ml-0.5 mb-0.5 font-semibold' htmlFor={id}>{label}</label>}
+			{label && <label className='block ml-1.5 mb-0.5 font-semibold' htmlFor={id}>{label}</label>}
 			<textarea
 				id={id}
 				name={id}
 				value={value}
 				placeholder={placeholder}
 				onChange={handleChange}
-				className={`block w-full resize-none [field-sizing:content] p-2 rounded-md border border-gray-300 bg-white ${className||''}`}
+				className={`block w-full resize-none [field-sizing:content] p-2 rounded-md border border-gray-300 bg-white text-black ${className||''}`}
 			/>
 		</>
 	)

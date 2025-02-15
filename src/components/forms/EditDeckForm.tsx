@@ -84,11 +84,13 @@ export function EditBlockForm() {
 						</div>
 						<div className="space-y-3">
 							<TextArea
+								label='Question'
 								placeholder="Question"
 								value={card.front}
 								onChange={(newValue) => updateCard(index, "front", newValue)}
 							/>
 							<TextArea
+								label='Answer'
 								placeholder="Answer"
 								value={card.back}
 								onChange={(newValue) => updateCard(index, "back", newValue)}
