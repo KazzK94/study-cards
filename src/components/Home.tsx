@@ -15,14 +15,15 @@ export function Home() {
 					<div className="grid md:grid-cols-2 gap-16">
 						<div className="space-y-5">
 							<h2 className="text-2xl font-semibold text-gray-800">Get Started Now</h2>
-							<div className="space-y-4">
-								<Link to="/create" className='flex items-center bg-blue-600 text-white px-4 py-2 rounded hover:opacity-90'>
-									<PlusCircle className="mr-2 h-4 w-4" />
-									Create a New Study Deck
-								</Link>
-								<Link to="/view" className='flex items-center bg-gray-800 text-white px-4 py-2 rounded hover:opacity-95'>
+							<div className="space-y-1">
+								<Link to="/view" className='flex justify-center items-center bg-gray-800 text-white px-4 py-2 rounded hover:opacity-95'>
 									<List className="mr-2 h-4 w-4" />
 									Review Your Study Decks
+								</Link>
+								<span className='block text-center'>or</span>
+								<Link to="/create" className='flex justify-center items-center bg-blue-600 text-white px-4 py-2 rounded hover:opacity-90'>
+									<PlusCircle className="mr-2 h-4 w-4" />
+									Create a New Study Deck
 								</Link>
 							</div>
 							<p className="text-sm text-gray-500 text-center mt-4">
