@@ -80,7 +80,7 @@ export function StudyCards() {
 					{
 						showAnswer && (
 							<>
-								<div className='text-base md:text-lg text-green-700 border-t border-gray-200 pt-4 flex flex-col gap-4'>
+								<div className='text-lg text-green-700 border-t border-gray-200 pt-4 flex flex-col gap-4'>
 									{currentCard.back.split('\n').map((line, i) => (<div key={i}>{!line ? <br /> : <p>{line}</p>}</div>))}
 								</div>
 								{
