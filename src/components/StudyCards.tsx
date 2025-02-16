@@ -73,14 +73,14 @@ export function StudyCards() {
 				</button>
 			</div>
 			<div className="bg-white px-6 pt-6 pb-4 rounded shadow-md mb-4 w-[90%] max-w-3xl mx-auto">
-				<div className="text-xl mb-4 space-y-4">
-					<div className='text-blue-800 font-semibold flex flex-col gap-1'>
+				<div className="mb-4 space-y-4">
+					<div className='text-xl text-blue-800 font-semibold flex flex-col gap-1'>
 						{currentCard.front.split('\n').map((line, i) => (<div key={i}>{!line ? <br /> : <p>{line}</p>}</div>))}
 					</div>
 					{
 						showAnswer && (
 							<>
-								<div className='text-green-700 border-t border-gray-200 pt-4 flex flex-col gap-4'>
+								<div className='text-base md:text-lg text-green-700 border-t border-gray-200 pt-4 flex flex-col gap-4'>
 									{currentCard.back.split('\n').map((line, i) => (<div key={i}>{!line ? <br /> : <p>{line}</p>}</div>))}
 								</div>
 								{
