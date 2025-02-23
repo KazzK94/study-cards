@@ -20,11 +20,8 @@ export function Navbar() {
 					</div>
 					<div className="hidden md:block">
 						<div className="ml-10 flex items-baseline space-x-4">
-							<Link to="/create" className="hover:bg-gray-700 px-3 py-2 rounded-md">
-								Create Deck
-							</Link>
 							<Link to="/view" className="hover:bg-gray-700 px-3 py-2 rounded-md">
-								My Decks
+								View Decks
 							</Link>
 						</div>
 					</div>

@@ -18,16 +18,16 @@ export function StudyDeck({ deck }: { deck: StudyDeckType }) {
 			<div className="mt-2 flex gap-2">
 				<Link
 					to={`/study/${deck.id}`}
-					className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+					className="bg-green-600/90 hover:bg-green-600 text-white px-4 py-2 rounded"
 				>
 					Study
 				</Link>
-				<Link to={`/edit/${deck.id}`} className="bg-blue-500/90 text-white px-4 py-2 rounded hover:bg-blue-600">
+				<Link to={`/edit/${deck.id}`} className="bg-cyan-600/90 hover:bg-cyan-600 text-white px-4 py-2 rounded">
 					Edit
 				</Link>
 				<button
 					onClick={handleDeleteDeck}
-					className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600/90 cursor-pointer"
+					className="bg-red-500 hover:bg-red-600/90 text-white px-4 py-2 rounded cursor-pointer"
 				>
 					Delete
 				</button>
